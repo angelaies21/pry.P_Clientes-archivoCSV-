@@ -32,5 +32,11 @@ namespace pry.P_Clientes_archivoCSV_
             Form formulario = new frmCargaClientes();
             formulario.Show();
         }
+
+        private void listadosDeTodosLosCleintesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmListar();
+            formulario.Show();
+        }
     }
 }

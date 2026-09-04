@@ -94,6 +94,7 @@
             this.listadosDeTodosLosCleintesToolStripMenuItem.Name = "listadosDeTodosLosCleintesToolStripMenuItem";
             this.listadosDeTodosLosCleintesToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.listadosDeTodosLosCleintesToolStripMenuItem.Text = "Listados de todos los cleintes";
+            this.listadosDeTodosLosCleintesToolStripMenuItem.Click += new System.EventHandler(this.listadosDeTodosLosCleintesToolStripMenuItem_Click);
             // 
             // listadosToolStripMenuItem
             // 

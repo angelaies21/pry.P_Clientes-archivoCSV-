@@ -59,6 +59,12 @@
     <Compile Include="frmCargaClientes.Designer.cs">
       <DependentUpon>frmCargaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListar.Designer.cs">
+      <DependentUpon>frmListar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCargaClientes.resx">
       <DependentUpon>frmCargaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListar.resx">
+      <DependentUpon>frmListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
