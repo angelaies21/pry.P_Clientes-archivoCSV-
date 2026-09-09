@@ -19,7 +19,8 @@ namespace pry.P_Clientes_archivoCSV_
 
         private void listadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new ClientesDeudores();
+            formulario.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace pry.P_Clientes_archivoCSV_
         {
             Form formulario = new frmListar();
             formulario.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

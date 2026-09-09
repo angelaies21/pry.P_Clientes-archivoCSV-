@@ -41,7 +41,7 @@
             this.lblCant = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblProm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(505, 496);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -59,9 +59,9 @@
             // lblTotalDeuda
             // 
             this.lblTotalDeuda.AutoSize = true;
-            this.lblTotalDeuda.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblTotalDeuda.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTotalDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDeuda.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotalDeuda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTotalDeuda.Location = new System.Drawing.Point(177, 319);
             this.lblTotalDeuda.Name = "lblTotalDeuda";
             this.lblTotalDeuda.Size = new System.Drawing.Size(113, 16);
@@ -135,9 +135,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlText;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(141, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 16);
@@ -148,9 +148,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ControlText;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(146, 400);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 16);
@@ -158,13 +158,13 @@
             this.label4.Text = "Promedio de deuda";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // lblProm
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(314, 400);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 23);
-            this.label5.TabIndex = 18;
+            this.lblProm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblProm.Location = new System.Drawing.Point(314, 400);
+            this.lblProm.Name = "lblProm";
+            this.lblProm.Size = new System.Drawing.Size(165, 23);
+            this.lblProm.TabIndex = 18;
             // 
             // frmListar
             // 
@@ -172,7 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 495);
             this.Controls.Add(this.dgvClientes);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblProm);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblCant);
@@ -203,6 +203,6 @@
         private System.Windows.Forms.Label lblCant;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblProm;
     }
 }

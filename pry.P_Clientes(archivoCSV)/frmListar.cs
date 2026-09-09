@@ -38,6 +38,7 @@ namespace pry.P_Clientes_archivoCSV_
             x.Listar(dgvClientes);
             lblCant.Text = x.CantClientes().ToString();
             lblTotal.Text = x.DeudaClientes().ToString();
+            lblProm.Text = x.Prom().ToString();
         }
     }
 }

@@ -38,6 +38,7 @@
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesOrdenadoPorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,8 @@
             // 
             // sistemaToolStripMenuItem
             // 
+            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sistemaToolStripMenuItem.Text = "Sistema";
@@ -115,6 +118,13 @@
             this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +155,7 @@
         private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesOrdenadoPorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 

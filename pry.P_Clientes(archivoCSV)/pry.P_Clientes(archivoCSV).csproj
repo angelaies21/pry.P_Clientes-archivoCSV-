@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesDeudores.Designer.cs">
+      <DependentUpon>ClientesDeudores.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsArchivo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClientesDeudores.resx">
+      <DependentUpon>ClientesDeudores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
