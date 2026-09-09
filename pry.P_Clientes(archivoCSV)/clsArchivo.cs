@@ -11,7 +11,7 @@ namespace pry.P_Clientes_archivoCSV_
     internal class clsArchivo
     {
 
-        public string NombreArchivo = "clientes.csv";
+        public string NombreArchivo = "../../Archivos/clientes.csv";
 
         public void Grabar(string cod, string nom, string deu, string lim)
         {
@@ -35,7 +35,7 @@ namespace pry.P_Clientes_archivoCSV_
             string[] vecDatos = new string[4];
 
 
-            StreamReader ad = new StreamReader(NombreArchivo);
+            StreamReader ad = new StreamReader(NombreArchivo); 
 
             DatosLeidos = ad.ReadLine(); //lo lee 
 

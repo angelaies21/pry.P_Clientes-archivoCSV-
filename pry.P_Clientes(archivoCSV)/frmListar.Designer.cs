@@ -49,9 +49,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(2, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 496);
+            this.pictureBox1.Size = new System.Drawing.Size(505, 495);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -91,7 +91,7 @@
             this.Column3,
             this.Column4});
             this.dgvClientes.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvClientes.Location = new System.Drawing.Point(36, 28);
+            this.dgvClientes.Location = new System.Drawing.Point(23, 22);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(443, 276);
             this.dgvClientes.TabIndex = 0;
