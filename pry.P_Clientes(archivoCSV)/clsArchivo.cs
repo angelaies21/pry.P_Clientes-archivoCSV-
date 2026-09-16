@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,99 @@ namespace pry.P_Clientes_archivoCSV_
     {
 
         public string NombreArchivo = "../../Archivos/clientes.csv";
+
+        public struct RegCli
+        {
+            public Int32 codigo;
+            public String usuario;
+            public Decimal Deuda;
+            public Decimal Limite;
+        };
+
+
+        //declarar el vector
+        static public RegCli[] Clinetes = new RegCli[100];
+
+        //declarar el indice
+        static public int IND = 0;
+
+
+        private void CargarVect()
+        {
+            string DatosLeidos = "";
+            string[] vecDatos = new string[4];
+
+
+            StreamReader ad = new StreamReader(NombreArchivo);
+
+            DatosLeidos = ad.ReadLine(); //lo lee 
+
+            //grilla.Rows.Clear();
+
+            while (DatosLeidos != null)
+            {
+                vecDatos = DatosLeidos.Split(';');
+
+                Clinetes[IND].codigo = Convert.ToInt32(vecDatos[0]);
+                Clinetes[IND].usuario = vecDatos[1];
+                Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
+                Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
+                IND++;
+                DatosLeidos = ad.ReadLine();
+
+                //grilla.Rows.Add(vecDatos[0], vecDatos[1], vecDatos[2], vecDatos[3]);
+
+                DatosLeidos = ad.ReadLine();
+            }
+
+            ad.Close();
+            ad.Dispose();
+        }
+
+        private void OrdenarVect()
+        {
+            RegCli aux;
+
+            for (Int32 c=0; c<IND-1; c++)
+            {
+                for(Int32 i=0; i<IND-1; i++)
+                {
+                    if (Clinetes[i].codigo > Clinetes[i+1].codigo)
+                    {
+                        aux= Clinetes[i];
+                        Clinetes[i] = Clinetes[i + 1];
+                        Clinetes[i + 1] = aux;
+                    }
+                }
+            }
+
+        }
+
+        private void ReescribirArchivo()
+        {
+            StreamWriter ad = new StreamWriter(NombreArchivo, true);
+
+            for (Int32 i = 0; i < IND - 1; i++)
+            {
+                ad.Write(Clinetes[i].codigo);
+                ad.Write(";");
+                ad.Write(Clinetes[i].usuario);
+                ad.Write(";");
+                ad.Write(Clinetes[i].Deuda);
+                ad.Write(";");
+                ad.WriteLine(Clinetes[i].Limite);
+            }
+            ad.Close();
+            ad.Dispose();
+        }
+
+
+        public void OrdenarArchivo()
+        {
+            CargarVect();
+            OrdenarArchivo();
+            ReescribirArchivo();
+        }
 
         public void Grabar(string cod, string nom, string deu, string lim)
         {
@@ -219,7 +313,165 @@ namespace pry.P_Clientes_archivoCSV_
 
         }
 
+        public void GenerarReporte()
+        {
+            string DatosLeidos = "";
+            string[] vecDatos = new string[4];
 
+            Int32 cant = 0;
+            decimal total = 0;
+
+            StreamWriter reporte = new StreamWriter("../../Archivos/Reporte.csv",false, Encoding.UTF8); //utf8 toma los acentos y la ñ
+            reporte.WriteLine("");
+            reporte.WriteLine("Listado de clientes");
+            reporte.WriteLine("");
+            reporte.WriteLine("Código; nombre; Limite; Deuda");
+
+            StreamReader ad = new StreamReader (NombreArchivo);
+            DatosLeidos = ad.ReadLine();
+
+            while(DatosLeidos != null)
+            {
+                vecDatos = DatosLeidos.Split(';');
+                reporte.Write(vecDatos[0]);
+                reporte.Write(";");
+                reporte.Write(vecDatos[1]);
+                reporte.Write(";");
+                reporte.Write(vecDatos[2]);
+                reporte.Write(";");
+                reporte.Write(vecDatos[3]);
+                cant++;
+                total = total + Convert.ToDecimal(vecDatos[2]);
+
+                DatosLeidos = ad.ReadLine();
+            }
+
+            ad.Close();
+            ad.Dispose();
+            reporte.WriteLine("");
+            reporte.Write("Total de deuda: ;;");
+            reporte.Write(total);
+            reporte.Write("cantidad de clientes: ;;");
+            reporte.WriteLine(cant);
+            reporte.Write("promedio de deuda: ;;");
+            reporte.WriteLine(total / cant);
+
+            reporte.Close();
+            reporte.Dispose();
+
+
+        }
+
+        private void CargarVector()
+        {
+            string DatosLeidos = "";
+            string[] vecDatos = new string[4];
+
+            StreamReader ad = new StreamReader(NombreArchivo);
+
+            while (DatosLeidos != null)
+            {
+                vecDatos = DatosLeidos.Split(';');
+
+                Clinetes[IND].codigo = Convert.ToInt32(vecDatos[0]);
+                Clinetes[IND].usuario = vecDatos[1];
+                Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
+                Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
+                IND++;
+                DatosLeidos = ad.ReadLine();
+            }
+
+            ad.Close();
+            ad.Dispose();
+        }
+
+
+        public void ordenarporCodigoDescendente(DataGridView Grilla)
+        {
+
+            string DatosLeidos = "";
+            string[] vecDatos = new string[4];
+
+            StreamReader ad = new StreamReader(NombreArchivo);
+
+            while (DatosLeidos != null)
+            {
+                vecDatos = DatosLeidos.Split(';');
+
+                Clinetes[IND].codigo = Convert.ToInt32(vecDatos[0]);
+                Clinetes[IND].usuario = vecDatos[1];
+                Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
+                Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
+                IND++;
+                DatosLeidos =ad.ReadLine();
+            }
+
+            ad.Close();
+            ad.Dispose();
+
+            RegCli aux;
+            Int32 i = 0;
+            Int32 c = 0;
+
+            while (i < IND - 1)
+            {
+                c = 0;
+                while (c < IND - 1)
+                {
+                    if (Clinetes[c].codigo > Clinetes[c + 1].codigo)
+                    {
+                        aux = Clinetes[c];
+                        Clinetes[c] = Clinetes[c + 1];
+                        Clinetes[c + 1] = aux;
+                    }
+                    c++;
+
+                }
+                i++;
+
+            }
+            Grilla.Rows.Clear();
+            for (Int32 z = 0; z < IND; z++)
+            {
+                Grilla.Rows.Add(Clinetes[i].codigo,Clinetes[i].usuario,Clinetes[i].Limite, Clinetes[i].Deuda);
+
+            }
+        }
+
+
+        public void ordenarporCodigoAscendente(DataGridView Grilla)
+        {
+
+            CargarVector();
+
+            RegCli aux;
+            Int32 i = 0;
+            Int32 c = 0;
+
+            while (i < IND - 1)
+            {
+                c = 0;
+                while (c < IND - 1)
+                {
+                    if (Clinetes[c].codigo > Clinetes[c + 1].codigo)
+                    {
+                        aux = Clinetes[c];
+                        Clinetes[c] = Clinetes[c + 1];
+                        Clinetes[c + 1] = aux;
+                    }
+                    c++;
+
+                }
+                i++;
+
+            }
+            Grilla.Rows.Clear();
+            for (Int32 z = 0; z < IND; z++)
+            {
+                Grilla.Rows.Add(Clinetes[i].codigo, Clinetes[i].usuario, Clinetes[i].Limite, Clinetes[i].Deuda);
+
+            }
+        }
     }
 
 

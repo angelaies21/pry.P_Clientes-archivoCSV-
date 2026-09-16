@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblProm = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.btnOrdenar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +57,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTotalDeuda
             // 
@@ -73,9 +76,9 @@
             // 
             this.btnListar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(326, 442);
+            this.btnListar.Location = new System.Drawing.Point(352, 442);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(153, 31);
+            this.btnListar.Size = new System.Drawing.Size(127, 31);
             this.btnListar.TabIndex = 12;
             this.btnListar.Text = "Listar Deudores";
             this.btnListar.UseVisualStyleBackColor = false;
@@ -166,11 +169,37 @@
             this.lblProm.Size = new System.Drawing.Size(165, 23);
             this.lblProm.TabIndex = 18;
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.Location = new System.Drawing.Point(194, 442);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(139, 31);
+            this.btnGenerar.TabIndex = 19;
+            this.btnGenerar.Text = "Generar Reporte";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdenar.Location = new System.Drawing.Point(23, 442);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(147, 31);
+            this.btnOrdenar.TabIndex = 20;
+            this.btnOrdenar.Text = "Ordenar Archivo";
+            this.btnOrdenar.UseVisualStyleBackColor = false;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
             // frmListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 495);
+            this.Controls.Add(this.btnOrdenar);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.lblProm);
             this.Controls.Add(this.label4);
@@ -204,5 +233,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblProm;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.Button btnOrdenar;
     }
 }

@@ -44,5 +44,10 @@ namespace pry.P_Clientes_archivoCSV_
         {
             Application.Exit();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

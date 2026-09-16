@@ -18,6 +18,32 @@ namespace pry.P_Clientes_archivoCSV_
         }
         clsArchivo x = new clsArchivo();
 
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            x.Listar(dgvClientes);
+            lblCant.Text = x.CantClientes().ToString();
+            lblTotal.Text = x.DeudaClientes().ToString();
+            lblProm.Text = x.Prom().ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            x.GenerarReporte();
+            MessageBox.Show("Reporte generado correctamente");
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            x.OrdenarArchivo();
+            MessageBox.Show("Archivo ordenado");
+            x.Listar(dgvClientes);
+        }
+
+
+
+
+
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -33,12 +59,11 @@ namespace pry.P_Clientes_archivoCSV_
 
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            x.Listar(dgvClientes);
-            lblCant.Text = x.CantClientes().ToString();
-            lblTotal.Text = x.DeudaClientes().ToString();
-            lblProm.Text = x.Prom().ToString();
+
         }
+
+        
     }
 }
