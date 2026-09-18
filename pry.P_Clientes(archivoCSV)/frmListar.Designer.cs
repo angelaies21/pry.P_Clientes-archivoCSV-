@@ -33,10 +33,6 @@
             this.lblTotalDeuda = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblCant = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +40,10 @@
             this.lblProm = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnOrdenar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -99,33 +99,13 @@
             this.dgvClientes.Size = new System.Drawing.Size(443, 276);
             this.dgvClientes.TabIndex = 0;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Código";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Usuario";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Lista de credito";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Deuda";
-            this.Column4.Name = "Column4";
-            // 
             // lblTotal
             // 
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTotal.Location = new System.Drawing.Point(314, 320);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(165, 23);
-            this.lblTotal.TabIndex = 14;
+            this.lblTotal.TabIndex = 0;
             // 
             // lblCant
             // 
@@ -133,7 +113,7 @@
             this.lblCant.Location = new System.Drawing.Point(314, 360);
             this.lblCant.Name = "lblCant";
             this.lblCant.Size = new System.Drawing.Size(165, 23);
-            this.lblCant.TabIndex = 15;
+            this.lblCant.TabIndex = 1;
             // 
             // label3
             // 
@@ -167,7 +147,7 @@
             this.lblProm.Location = new System.Drawing.Point(314, 400);
             this.lblProm.Name = "lblProm";
             this.lblProm.Size = new System.Drawing.Size(165, 23);
-            this.lblProm.TabIndex = 18;
+            this.lblProm.TabIndex = 2;
             // 
             // btnGenerar
             // 
@@ -192,6 +172,26 @@
             this.btnOrdenar.Text = "Ordenar Archivo";
             this.btnOrdenar.UseVisualStyleBackColor = false;
             this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Código";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Usuario";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Deuda";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Lista de credito";
+            this.Column4.Name = "Column4";
             // 
             // frmListar
             // 
@@ -224,10 +224,6 @@
         private System.Windows.Forms.Label lblTotalDeuda;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblCant;
         private System.Windows.Forms.Label label3;
@@ -235,5 +231,9 @@
         private System.Windows.Forms.Label lblProm;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

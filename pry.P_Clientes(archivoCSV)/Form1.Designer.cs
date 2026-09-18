@@ -119,6 +119,7 @@
             this.clientesOrdenadoPorToolStripMenuItem.Name = "clientesOrdenadoPorToolStripMenuItem";
             this.clientesOrdenadoPorToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.clientesOrdenadoPorToolStripMenuItem.Text = "clientes ordenado por";
+            this.clientesOrdenadoPorToolStripMenuItem.Click += new System.EventHandler(this.clientesOrdenadoPorToolStripMenuItem_Click);
             // 
             // vendedoresToolStripMenuItem
             // 

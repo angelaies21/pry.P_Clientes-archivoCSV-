@@ -16,55 +16,55 @@ namespace pry.P_Clientes_archivoCSV_
         {
             InitializeComponent();
         }
-        clsArchivo x= new clsArchivo();
+        clsArchivo x = new clsArchivo();
 
         private void btnListar_Click(object sender, EventArgs e)
-        { 
-            
+        {
+
             switch (cmbCampo.SelectedIndex)
             {
                 case 0:
                     if (cmbModo.SelectedIndex == 0)
                     {
-                        x.ordenarporCodigoAscendente();
+                        x.ordenarporCodigoAscendente(dgvClientes);
 
                     }
                     else
                     {
-                        x.ordenarporCodigoDescendente();
+                        x.ordenarporCodigoDescendente(dgvClientes);
                     }
                     break;
                 case 1:
-                    if (cmbModo.SelectedIndex == 0)
+                    if (cmbModo.SelectedIndex == 1)
                     {
-                        x.ordenarporNombreAscendente();
+                        x.ordenarporNombreAscendente(dgvClientes);
 
                     }
                     else
                     {
-                        x.ordenarporNombreDescendente();
+                        x.ordenarporNombreDescendente(dgvClientes);
                     }
                     break;
                 case 2:
-                    if (cmbModo.SelectedIndex == 0)
+                    if (cmbModo.SelectedIndex == 2)
                     {
-                        x.ordenarporLimiteAscendente();
+                        x.ordenarporLimiteAscendente(dgvClientes);
 
                     }
                     else
                     {
-                        x.ordenarporLimiteDescendente();
+                        x.ordenarporLimiteDescendente(dgvClientes);
                     }
                     break;
                 case 3:
-                    if (cmbModo.SelectedIndex == 0)
+                    if (cmbModo.SelectedIndex == 3)
                     {
-                        x.ordenarporDeudaAscendente();
+                        x.ordenarporDeudaAscendente(dgvClientes);
 
                     }
                     else
                     {
-                        x.ordenarporDeudaDescendente();
+                        x.ordenarporDeudaDescendente(dgvClientes);
                     }
                     break;
             }
@@ -72,9 +72,34 @@ namespace pry.P_Clientes_archivoCSV_
             dgvClientes.Rows.Clear();
             for (Int32 i = 0; i < clsArchivo.IND; i++)
             {
-                dgvClientes.Rows.Add(clsArchivo.Clinetes[i].codigo, clsArchivo.Clinetes[i].usuario, clsArchivo.Clinetes[i].Limite , clsArchivo.Clinetes[i].Deuda );
+                dgvClientes.Rows.Add(clsArchivo.Clinetes[i].codigo, clsArchivo.Clinetes[i].usuario, clsArchivo.Clinetes[i].Limite, clsArchivo.Clinetes[i].Deuda);
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Control_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SelectNextControl((Control)sender, true, true, true, true);
+                e.SuppressKeyPress = true;
+            }
+
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

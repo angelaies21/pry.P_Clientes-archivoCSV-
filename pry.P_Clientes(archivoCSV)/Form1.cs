@@ -49,5 +49,11 @@ namespace pry.P_Clientes_archivoCSV_
         {
 
         }
+
+        private void clientesOrdenadoPorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmOrdenarClientesPor();
+            formulario.Show();
+        }
     }
 }

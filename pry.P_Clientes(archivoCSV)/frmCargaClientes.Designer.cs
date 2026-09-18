@@ -68,7 +68,7 @@
             this.txtLimite.Location = new System.Drawing.Point(321, 81);
             this.txtLimite.Name = "txtLimite";
             this.txtLimite.Size = new System.Drawing.Size(152, 22);
-            this.txtLimite.TabIndex = 8;
+            this.txtLimite.TabIndex = 3;
             // 
             // txtUsuario
             // 
@@ -77,7 +77,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(297, 25);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(176, 22);
-            this.txtUsuario.TabIndex = 7;
+            this.txtUsuario.TabIndex = 2;
             // 
             // txtDeuda
             // 
@@ -86,7 +86,7 @@
             this.txtDeuda.Location = new System.Drawing.Point(65, 78);
             this.txtDeuda.Name = "txtDeuda";
             this.txtDeuda.Size = new System.Drawing.Size(120, 22);
-            this.txtDeuda.TabIndex = 6;
+            this.txtDeuda.TabIndex = 1;
             // 
             // txtCodig
             // 
@@ -95,7 +95,7 @@
             this.txtCodig.Location = new System.Drawing.Point(70, 28);
             this.txtCodig.Name = "txtCodig";
             this.txtCodig.Size = new System.Drawing.Size(120, 22);
-            this.txtCodig.TabIndex = 5;
+            this.txtCodig.TabIndex = 0;
             // 
             // lblUsuario
             // 
