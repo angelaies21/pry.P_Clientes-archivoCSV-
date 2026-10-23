@@ -25,49 +25,33 @@ namespace pry.P_Clientes_archivoCSV_
             {
                 case 0:
                     if (cmbModo.SelectedIndex == 0)
-                    {
                         x.ordenarporCodigoAscendente(dgvClientes);
-
-                    }
                     else
-                    {
                         x.ordenarporCodigoDescendente(dgvClientes);
-                    }
                     break;
+
                 case 1:
-                    if (cmbModo.SelectedIndex == 1)
-                    {
+                    if (cmbModo.SelectedIndex == 0)
                         x.ordenarporNombreAscendente(dgvClientes);
-
-                    }
                     else
-                    {
                         x.ordenarporNombreDescendente(dgvClientes);
-                    }
                     break;
+
                 case 2:
-                    if (cmbModo.SelectedIndex == 2)
-                    {
+                    if (cmbModo.SelectedIndex == 0)
                         x.ordenarporLimiteAscendente(dgvClientes);
-
-                    }
                     else
-                    {
                         x.ordenarporLimiteDescendente(dgvClientes);
-                    }
                     break;
-                case 3:
-                    if (cmbModo.SelectedIndex == 3)
-                    {
-                        x.ordenarporDeudaAscendente(dgvClientes);
 
-                    }
+                case 3:
+                    if (cmbModo.SelectedIndex == 0)
+                        x.ordenarporDeudaAscendente(dgvClientes);
                     else
-                    {
                         x.ordenarporDeudaDescendente(dgvClientes);
-                    }
                     break;
             }
+        
 
             dgvClientes.Rows.Clear();
             for (Int32 i = 0; i < clsArchivo.IND; i++)
@@ -103,3 +87,4 @@ namespace pry.P_Clientes_archivoCSV_
         }
     }
 }
+

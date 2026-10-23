@@ -46,13 +46,18 @@ namespace pry.P_Clientes_archivoCSV_
             {
                 vecDatos = DatosLeidos.Split(';');
 
-                Clinetes[IND].codigo = Convert.ToInt32(vecDatos[0]);
-                Clinetes[IND].usuario = vecDatos[1];
-                Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
-                Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
-                IND++;
+                if (vecDatos.Length == 4 && vecDatos[0] != "")
+                {
+                    Clinetes[IND].codigo = Convert.ToInt32(vecDatos[0]);
+                    Clinetes[IND].usuario = vecDatos[1];
+                    Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
+                    Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
+
+                    IND++;
+                }
+
                 DatosLeidos = ad.ReadLine();
-                //grilla.Rows.Add(vecDatos[0], vecDatos[1], vecDatos[2], vecDatos[3]);
+
             }
 
             ad.Close();
@@ -120,6 +125,10 @@ namespace pry.P_Clientes_archivoCSV_
             ad.Dispose();
         }
 
+
+
+
+
         public void Listar(DataGridView grilla)
         {
             string DatosLeidos = "";
@@ -136,7 +145,13 @@ namespace pry.P_Clientes_archivoCSV_
             {
                 vecDatos = DatosLeidos.Split(';');
 
-                grilla.Rows.Add(vecDatos[0], vecDatos[1], vecDatos[2], vecDatos[3]);
+                if (vecDatos.Length == 4)
+                {
+                    if (Convert.ToDecimal(vecDatos[3]) > 0)
+                    {
+                        grilla.Rows.Add(vecDatos[0], vecDatos[1], vecDatos[2], vecDatos[3]);
+                    }
+                }
 
                 DatosLeidos = ad.ReadLine();
             }
@@ -144,6 +159,8 @@ namespace pry.P_Clientes_archivoCSV_
             ad.Close();
             ad.Dispose();
         }
+
+    
 
         public int CantClientes()
         {
@@ -179,17 +196,32 @@ namespace pry.P_Clientes_archivoCSV_
             {
                 vecDatos = DatosLeidos.Split(';');
 
-                total = total + Convert.ToDecimal(vecDatos[2]);
+                if (vecDatos.Length == 4 && vecDatos[0] != "")
+                {
+                    int codigo;
+
+                    if (Int32.TryParse(vecDatos[0], out codigo))
+                    {
+                        Clinetes[IND].codigo = codigo;
+                        Clinetes[IND].usuario = vecDatos[1];
+                        Clinetes[IND].Deuda = Convert.ToDecimal(vecDatos[2]);
+                        Clinetes[IND].Limite = Convert.ToDecimal(vecDatos[3]);
+
+                        IND++;
+                    }
+                }
 
                 DatosLeidos = ad.ReadLine();
+               
             }
 
             ad.Close();
             ad.Dispose();
 
             return total;
-
         }
+
+        
 
         public decimal Prom()
         {
@@ -201,12 +233,21 @@ namespace pry.P_Clientes_archivoCSV_
             StreamReader ad = new StreamReader(NombreArchivo);
             DatosLeidos = ad.ReadLine();
 
+
             while (DatosLeidos != null)
             {
                 vecDatos = DatosLeidos.Split(';');
 
-                total = total + Convert.ToDecimal(vecDatos[2]);
-                c++;
+                if (vecDatos.Length == 4)
+                {
+                    decimal deuda;
+
+                    if (Decimal.TryParse(vecDatos[2], out deuda))
+                    {
+                        total = total + deuda;
+                        c++;
+                    }
+                }
 
                 DatosLeidos = ad.ReadLine();
             }
@@ -327,21 +368,31 @@ namespace pry.P_Clientes_archivoCSV_
             StreamReader ad = new StreamReader(NombreArchivo);
             DatosLeidos = ad.ReadLine();
 
+
             while (DatosLeidos != null)
             {
                 vecDatos = DatosLeidos.Split(';');
-                reporte.Write(vecDatos[0]);
-                reporte.Write(";");
-                reporte.Write(vecDatos[1]);
-                reporte.Write(";");
-                reporte.Write(vecDatos[2]);
-                reporte.Write(";");
-                reporte.Write(vecDatos[3]);
-                cant++;
-                total = total + Convert.ToDecimal(vecDatos[2]);
+
+                if (vecDatos.Length == 4)
+                {
+                    reporte.Write(vecDatos[0]);
+                    reporte.Write(";");
+                    reporte.Write(vecDatos[1]);
+                    reporte.Write(";");
+                    reporte.Write(vecDatos[2]);
+                    reporte.Write(";");
+                    reporte.WriteLine(vecDatos[3]);
+
+                    cant++;
+                    total = total + Convert.ToDecimal(vecDatos[2]);
+                }
 
                 DatosLeidos = ad.ReadLine();
             }
+
+
+
+            
 
             ad.Close();
             ad.Dispose();

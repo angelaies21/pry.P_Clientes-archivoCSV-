@@ -2,6 +2,8 @@
 Listado de clientes
 
 Código; nombre; Limite; Deuda
-0;AA;12;1231;PP;60;808;ww;10;856;nn;5;15
-Total de deuda: ;;87cantidad de clientes: ;;4
-promedio de deuda: ;;21,75
+1;a;100;500
+2;b;200;250
+
+Total de deuda: ;;300cantidad de clientes: ;;2
+promedio de deuda: ;;150
